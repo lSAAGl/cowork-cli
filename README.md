@@ -2,7 +2,7 @@
 
 **A reverse-engineered implementation of Anthropic's multi-agent orchestration pattern for autonomous software engineering.**
 
-cowork is a CLI tool that decomposes complex coding tasks into a structured pipeline of specialized AI workers — each with defined roles, tool permissions, and output schemas — coordinated by a supervisor loop that handles planning, execution, review, testing, and iterative fixing.
+cowork_cli is a CLI tool that decomposes complex coding tasks into a structured pipeline of specialized AI workers — each with defined roles, tool permissions, and output schemas — coordinated by a supervisor loop that handles planning, execution, review, testing, and iterative fixing.
 
 > **Disclaimer:** This is an independent reverse-engineering effort for research and educational purposes. It is not affiliated with, endorsed by, or derived from proprietary source code of Anthropic or any other organization.
 
