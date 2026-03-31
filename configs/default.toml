@@ -1,0 +1,51 @@
+# Default cowork configuration
+
+[supervisor]
+max_iterations = 5
+max_total_cost_usd = 999.0
+consecutive_fix_failures_before_replan = 3
+backend = "claude"
+
+[roles.researcher]
+model = "haiku"
+tools = "Read,Glob,Grep,Bash"
+disallowed_tools = "Edit,Write"
+max_workers = 2
+budget_per_worker = 50.0
+timeout_seconds = 1800
+
+[roles.planner]
+model = "opus"
+tools = "Read,Glob,Grep"
+max_workers = 1
+budget_per_worker = 50.0
+timeout_seconds = 1800
+
+[roles.implementer]
+model = "sonnet"
+tools = "default"
+max_workers = 3
+budget_per_worker = 50.0
+timeout_seconds = 1800
+
+[roles.reviewer]
+model = "opus"
+tools = "Read,Glob,Grep"
+disallowed_tools = "Edit,Write,Bash"
+max_workers = 1
+budget_per_worker = 50.0
+timeout_seconds = 1800
+
+[roles.tester]
+model = "sonnet"
+tools = "Bash,Read"
+max_workers = 1
+budget_per_worker = 50.0
+timeout_seconds = 1800
+
+[roles.fixer]
+model = "sonnet"
+tools = "default"
+max_workers = 1
+budget_per_worker = 50.0
+timeout_seconds = 1800

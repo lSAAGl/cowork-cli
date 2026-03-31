@@ -1,0 +1,83 @@
+{
+  "claude_success": {
+    "type": "result",
+    "subtype": "success",
+    "result": "",
+    "structured_output": {
+      "summary": "Found 3 Python modules in src/",
+      "key_files": ["src/main.py", "src/utils.py", "src/config.py"],
+      "patterns": ["MVC pattern", "dependency injection"],
+      "dependencies": ["flask", "sqlalchemy"],
+      "risks": ["No test coverage"],
+      "raw_notes": "The codebase uses Flask with SQLAlchemy ORM."
+    },
+    "total_cost_usd": 0.0234,
+    "session_id": "test-session-123"
+  },
+  "claude_plan_success": {
+    "type": "result",
+    "subtype": "success",
+    "result": "",
+    "structured_output": {
+      "goal": "Add pagination to /api/users",
+      "approach": "Add query params and SQL LIMIT/OFFSET",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "Add pagination params",
+          "description": "Add page/per_page query params to the route",
+          "files": ["src/routes.py"],
+          "depends_on": []
+        },
+        {
+          "id": "step-2",
+          "title": "Update query",
+          "description": "Add LIMIT/OFFSET to the SQL query",
+          "files": ["src/models.py"],
+          "depends_on": ["step-1"]
+        }
+      ],
+      "parallel_groups": [
+        {"step_ids": ["step-1"]},
+        {"step_ids": ["step-2"]}
+      ],
+      "test_strategy": "Test with various page sizes",
+      "acceptance_criteria": ["Pagination works", "Tests pass"]
+    },
+    "total_cost_usd": 0.1205
+  },
+  "claude_review_approved": {
+    "type": "result",
+    "subtype": "success",
+    "result": "",
+    "structured_output": {
+      "approved": true,
+      "summary": "Implementation looks good",
+      "issues": [],
+      "strengths": ["Clean code", "Good error handling"]
+    },
+    "total_cost_usd": 0.0567
+  },
+  "claude_test_passed": {
+    "type": "result",
+    "subtype": "success",
+    "result": "",
+    "structured_output": {
+      "all_passed": true,
+      "tests_run": 5,
+      "tests_passed": 5,
+      "tests_failed": 0,
+      "test_cases": [],
+      "summary": "All tests pass",
+      "coverage_notes": ""
+    },
+    "total_cost_usd": 0.0345
+  },
+  "claude_error": {
+    "type": "result",
+    "subtype": "error",
+    "result": "Something went wrong",
+    "structured_output": null,
+    "total_cost_usd": 0.001
+  }
+}
