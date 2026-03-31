@@ -1,4 +1,4 @@
-# cowork
+# cowork_cli
 
 **A reverse-engineered implementation of Anthropic's multi-agent orchestration pattern for autonomous software engineering.**
 
